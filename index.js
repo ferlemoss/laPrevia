@@ -17,15 +17,15 @@ while(seguirComprando===true){
         totalCompra=totalCompra+900
     }else if(producto===5){
         totalCompra=totalCompra+500
-    }else (producto===6){
+    }else (producto===6)
         totalCompra=totalCompra+850
     }
-}
+
 desicion = prompt ("quieres seguir comprando 1-Si   2-No")
     if(desicion===1){
         producto = parseInt(prompt("escoge el producto que desea comprar: 1-Lomos 2-Empanadas 3- Hamburguesas 4-Pizzas 5-Papas Fritas 6-Pollo"))
     }else{
         seguirComprando = false
     };
-    
+
 alert ("El total de tu compra es"+totalCompra);
