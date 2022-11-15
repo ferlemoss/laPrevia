@@ -25,3 +25,36 @@ bebidasArray.push(schneirder);
 
 const latasCerveza=new bebidas (6,"latasCerveza",250,140);
 bebidasArray.push(latasCerveza);
+
+const selectBebidas = document.getElementById('listaB')
+
+bebidasArray.forEach((elemento) => {
+  const optionProd = document.createElement('option')
+  optionProd.innerText = `${elemento.tipo}: $${elemento.precio}`
+  optionProd.setAttribute('id', `${elemento.id}`)
+  selectBebidas.append(optionProd)
+})
+
+const carrito = []
+
+const botonIngresar = document.getElementById('ingresarBebida')
+const finalizarPedido = document.getElementById('finalizar')
+
+botonIngresar.onclick = () => {
+  console.log(selectBebidas.selectedIndex)
+  const indexBebidas = selectBebidas.selectedIndex
+  const bebidasSeleccionada = bebidasArray[indexBebidas]
+  console.log(bebidasSeleccionada)
+  carrito.push(bebidasSeleccionada)
+}
+
+finalizarPedido.onclick = () => {
+  console.log(carrito)
+  let total = 0
+  carrito.forEach((bebidas) => {
+    total = total + bebidas.price
+  })
+  alert(
+    `Elegiste ${carrito.length} bebidas y el total es de ${total}`
+  )
+}
