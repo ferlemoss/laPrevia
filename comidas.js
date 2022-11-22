@@ -48,7 +48,7 @@ finalizarPedido.onclick = () => {
   console.log(carrito)
   let total = 0
   carrito.forEach((comida) => {
-    total = total + comida.price
+    total = total + comida.precio
   })
   alert(
     `Elegiste ${carrito.length} comidas y el total es de ${total}`
